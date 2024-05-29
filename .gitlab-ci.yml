@@ -1,0 +1,16 @@
+deploy:
+  stage: deploy
+  tags:
+    - app
+  script:
+    #- rm -rf /home/ubuntu/talenty-api || true
+    #- mkdir -p /home/ubuntu/talenty-api  # Create the directory if it doesn't exist
+    #- cd /home/ubuntu/talenty-api  # Navigate to the backend directory
+    - cd /home/ubuntu/ats/api  # Navigate to the backend directory
+    - git pull origin main # pulling the new version
+    #- git clone -b main https://${GITLAB_USERNAME}:${GITLAB_TOKEN}@gitlab.com/talenty1/ats-api.git . 
+      # Clone the Git repository using username and token variables
+    #- cd /home/ubuntu/talenty/ats-api
+    - yarn install  # Install dependencies
+    - pm2 restart 0  # Start your Node.js application
+

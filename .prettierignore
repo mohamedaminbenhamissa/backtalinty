@@ -1,0 +1,5 @@
+# Ignore useless files
+/.github
+/uploads
+/utils/templates
+/definitions
